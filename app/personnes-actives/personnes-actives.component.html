@@ -1,0 +1,13 @@
+<h3>Personnes actives</h3>
+
+<div *ngIf="tableauPersonnes && tableauPersonnes.length >0">
+  <ul>
+    <li *ngFor="let personne of tableauPersonnes">
+      <p>{{personne}}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!tableauPersonnes || tableauPersonnes.length ==0">
+  <p>Personne n'est connecté</p>
+</div>

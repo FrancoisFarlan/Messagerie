@@ -1,0 +1,22 @@
+<h3>Nouveau message</h3>
+
+<form id="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <label class="form-label" for="auteur">De : </label>
+  <input class="form-control" id="auteur" name="auteur" [(ngModel)]="auteur" type="text" required minlength="5"/>
+
+  <div class="mt-3 alert alert-danger" *ngIf="validateNom(form)">
+    Un pseudo de plus de 4 caractères est obligatoire
+  </div>
+
+  <label class = "form-label mt-2"  for="message">Message : </label>
+  <textarea class="form-control" name="texteMessage" [(ngModel)]="texteMessage" id="message" cols="3" required></textarea>
+
+  <div class="mt-3 alert alert-danger" *ngIf="validateTexte(form)">
+    Le message est obligatoire
+  </div>
+
+  <div class="text-end mt-3">
+  <button class="btn btn-primary" type="submit">Valider</button>
+  <button class="btn btn-primary ms-3">Annuler</button>
+  </div>
+</form>

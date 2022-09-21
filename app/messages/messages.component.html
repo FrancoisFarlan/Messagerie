@@ -1,0 +1,14 @@
+<h3>Messages</h3>
+
+<div style="max-height: 32vh; overflow-y: scroll;" *ngIf="messages && messages.length >0">
+  <ul class="list-group mb-3 me-3">
+    <li class="list-group-item" *ngFor="let message of messages">
+      <p>Par <em class="text-decoration-underline">{{message.auteur}}</em>, le {{message.date | date : 'dd/MM/yyyy à HH:mm'}}  </p>
+      <p class="mb-0">{{message.texteMessage}}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!messages || messages.length ==0">
+  <p>Il n'y aucun message à afficher</p>
+</div>
